@@ -6,13 +6,12 @@ ifndef TARGET
 TARGET=sky
 endif
 
-all: energy.sky
+all: broadcast-example.sky
 
-energy.upload: energy.upload
+upload: broadcast-example.upload
 
-energy.sim: energy.csc energy.c
-	java -jar $(CONTIKI)/tools/cooja/dist/cooja.jar -quickstart=energy.csc -contiki=$(CONTIKI)
-
+sim: broadcast-example.csc broadcast-example.c
+	java -jar $(CONTIKI)/tools/cooja/dist/cooja.jar -quickstart=broadcast-example.csc -contiki=$(CONTIKI)
 simulation:
 	java -jar $(CONTIKI)/tools/cooja/dist/cooja.jar -contiki=$(CONTIKI)
 
