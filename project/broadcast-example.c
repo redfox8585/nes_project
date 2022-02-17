@@ -76,6 +76,7 @@ typedef struct {
     linkaddr_t sender;
     uint8_t packetID;
     uint8_t hops;
+    linkaddr_t receiver;
 }Packet;
 
 
@@ -117,6 +118,10 @@ static void sendAlert(struct broadcast_conn* broadcast){
         packet.packetID = ++lastPacketIdSend;
         packet.hops = 0;
 
+        linkaddr_copy(&(packet.receiver), &linkaddr_null);
+        packet.receiver.u8[0] = REPORTING_POINT_ADDR0;
+        packet.receiver.u8[1] = REPORTING_POINT_ADDR1;
+
         packetbuf_copyfrom((void*)&packet, sizeof(Packet));
         
         addToPacketList(&packetList, &packet);
@@ -132,9 +137,14 @@ static void sendAck(struct broadcast_conn* broadcast, linkaddr_t* sender){
         /* Copy data to the packet buffer */
         Packet packet;
         packet.type = ACK;
-        linkaddr_copy(&(packet.sender), sender);
+        
+        linkaddr_copy(&(packet.sender), &linkaddr_null);
+        packet.sender.u8[0] = REPORTING_POINT_ADDR0;
+        packet.sender.u8[1] = REPORTING_POINT_ADDR1;
         packet.packetID = ++lastPacketIdSend;
         packet.hops = 0;
+
+        linkaddr_copy(&(packet.receiver), sender);
 
         packetbuf_copyfrom((void*)&packet, sizeof(Packet));
         
@@ -154,30 +164,38 @@ static void broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from) {
     Packet* packet = (Packet*) packetbuf_dataptr();
     packet->hops++;
 
-    if(packet->type == ALERT){
-
-        if(isPrintMode(DEBUG))
+    if(isPrintMode(DEBUG))
             printf("broadcast message received from %d.%d: packed type %d, hops %d\n", from->u8[0], from->u8[1], packet->type, packet->hops);
 
-        if(linkaddr_node_addr.u8[0] == REPORTING_POINT_ADDR0 && linkaddr_node_addr.u8[1] == REPORTING_POINT_ADDR1){
-            
+    // check if packet reached destination
+    if(linkaddr_cmp(&linkaddr_node_addr, &packet->receiver)){
+
+        if(packet->type == ALERT){
+
+            if(linkaddr_node_addr.u8[0] == REPORTING_POINT_ADDR0 && linkaddr_node_addr.u8[1] == REPORTING_POINT_ADDR1){
+                
+                if(isPrintMode(LATENCY))
+                    printf("sink received packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
+
+                if(isPrintMode(HOPS))
+                    printf("number of hops: %d\n", packet->hops);
+
+                // reporting point received packet: send acknowledgement back to sender
+                sendAck(c, &packet->sender);
+
+                return;
+            }
+
+        } else if (packet->type == ACK) {
+
             if(isPrintMode(LATENCY))
-                printf("sink received packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
+                printf("source received ack packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
 
-            if(isPrintMode(HOPS))
-                printf("number of hops: %d", packet->hops);
-
-            // reporting point received packet: send acknowledgement back to sender
-            //sendAck(c, &packet->sender);
-
+            // source of alert received ackonwledgement: stop retransmission of packet
+            lastPacketIdAck = lastPacketIdSend;
+            
             return;
         }
-
-    } else if (packet->type == ACK) {
-        if(isPrintMode(LATENCY))
-            printf("source received ack packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
-
-        return;
     }
 
     /* transmit packet only if it has not already been sent */
@@ -216,15 +234,8 @@ PROCESS_THREAD(example_broadcast_process, ev, data) {
 
     SENSORS_ACTIVATE(button_sensor);
 
-    /* 
-     * Set up a broadcast connection
-     * Arguments: channel (129) and callbacks function
-     */
     broadcast_open(&broadcast, 129, &broadcast_cb);
-
-    //initTime(&broadcast);
     
-    /* Send broadcast packet in loop */
     while(1) {
 
 
@@ -238,12 +249,17 @@ PROCESS_THREAD(example_broadcast_process, ev, data) {
 
         sendAlert(&broadcast);
 
-        unsigned long ticks = CLOCK_SECOND * 2;
-        etimer_set(&et, ticks);
-        PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
 
-        // if packet has not been acknowledged after 2 seconds: retransmit packet
-        if(lastPacketIdSend != lastPacketIdAck){
+        while(1){
+            unsigned long ticks = CLOCK_SECOND * 10;
+            etimer_set(&et, ticks);
+            PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
+
+            // if packet has not been acknowledged after 10 seconds: retransmit packet
+            if(lastPacketIdSend == lastPacketIdAck){
+                break;
+            }
+
             sendAlert(&broadcast);
         }
 

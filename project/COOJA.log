@@ -302,3 +302,181 @@
 [13:01:05 - Thread-27] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
 [13:01:05 - Thread-27] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
 [13:01:05 - Thread-27] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:22:53 - Thread-28] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:22:53 - Thread-28] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:22:53 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:53 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:53 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:53 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:53 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:22:54 - Thread-28] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:22:57 - Thread-29] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645100577364
+[13:23:32 - Thread-29] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645100612398	Duration: 35034 ms	Simulated time 162875 ms	Ratio 4.649055203516584
+[13:25:09 - Thread-30] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:25:09 - Thread-30] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:09 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:10 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:10 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:10 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:10 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:10 - Thread-30] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:25:11 - Thread-30] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:25:21 - Thread-31] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645100721013
+[13:26:49 - Thread-31] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645100809953	Duration: 88940 ms	Simulated time 420712 ms	Ratio 4.730290083202159
+[13:26:50 - Thread-32] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:26:50 - Thread-32] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:50 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:51 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:51 - Thread-32] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:26:51 - Thread-32] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:26:51 - Thread-33] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645100811515
+[13:28:17 - Thread-33] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645100897625	Duration: 86110 ms	Simulated time 395137 ms	Ratio 4.588746951573569
+[13:30:59 - Thread-34] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:30:59 - Thread-34] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:30:59 - Thread-34] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:00 - Thread-34] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:31:01 - Thread-35] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645101061689
+[13:31:28 - Thread-35] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645101088012	Duration: 26323 ms	Simulated time 60305 ms	Ratio 2.290962276336284
+[13:31:44 - Thread-36] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645101104351
+[13:31:47 - Thread-36] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645101107571	Duration: 3220 ms	Simulated time 67238 ms	Ratio 20.88136645962733
+[13:31:47 - Thread-37] [AbstractRadioMedium.java:198] [FATAL] - Connection source turned off radio: org.contikios.cooja.mspmote.interfaces.Msp802154Radio@1b5ecfdc
+[13:31:47 - Thread-37] [AbstractRadioMedium.java:198] [FATAL] - Connection source turned off radio: org.contikios.cooja.mspmote.interfaces.Msp802154Radio@77137e63
+[13:31:47 - Thread-37] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:31:47 - Thread-37] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:31:47 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:47 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:31:48 - Thread-37] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:31:49 - Thread-38] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645101109134
+[13:32:34 - Thread-38] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645101154409	Duration: 45275 ms	Simulated time 103000 ms	Ratio 2.2749861954721147
+[13:32:34 - Thread-39] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:32:34 - Thread-39] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:32:34 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:34 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:34 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:35 - Thread-39] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:32:36 - Thread-39] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:32:36 - Thread-40] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645101156224
+[13:33:34 - Thread-40] [Simulation.java:311] [INFO] - Simulation main loop stopped, system time: 1645101214390	Duration: 58166 ms	Simulated time 190487 ms	Ratio 3.2748856720420862
+[13:34:00 - Thread-41] [Simulation.java:420] [INFO] - Simulation random seed: 123456
+[13:34:00 - Thread-41] [CompileContiki.java:140] [INFO] - > make broadcast-example.sky TARGET=sky 
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:01 - Thread-41] [MspMote.java:235] [INFO] - Loading firmware from: /home/tkn/Desktop/../nes_project/project/broadcast-example.sky
+[13:34:02 - Thread-41] [TimeLine.java:567] [INFO] - Zoom level: 500.0 microseconds/pixel 
+[13:34:03 - Thread-42] [Simulation.java:252] [INFO] - Simulation main loop started, system time: 1645101243434
