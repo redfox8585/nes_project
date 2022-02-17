@@ -50,58 +50,44 @@ PROCESS(example_broadcast_process, "Broadcast example");
 PROCESS(energest_thread, "Energest Thread");
 AUTOSTART_PROCESSES(&example_broadcast_process, &energest_thread);
 
-#define DEBUG 0
-#define ENERGY 1
+#define NO_OUTPUT 0
+#define DEBUG 1
+#define ENERGY 2
+#define HOPS 4
+#define LATENCY 8
+
 // change this define to change the print mode
-#define PRINT_MODE DEBUG
+#define PRINT_MODE (LATENCY | HOPS)
 
-/*int printf2(int mode, const char* format, ...){
-    va_list args;
-    if(PRINT_MODE == mode)
-        return printf(format, args);
-    return 0;
-}*/
+static int isPrintMode(int mode){
+    return (PRINT_MODE & mode) > 0;
+}
 
-typedef struct {
-    linkaddr_t addr;
-} Path;
+// address of the reporting point
+#define REPORTING_POINT_ADDR0 1
+#define REPORTING_POINT_ADDR1 0
+
+// packet types
+#define ALERT 0
+#define ACK 1
 
 typedef struct {
 	uint8_t type;
     linkaddr_t sender;
     uint8_t packetID;
     uint8_t hops;
-    clock_time_t timestamp;
 }Packet;
 
-/*void add_to_path(Packet* packet, linkaddr_t addr){
-    Path** p = &(packet->path);
-    while(*p != NULL)
-        p = &(p->next);
-    
-    *p = (Path*)malloc(sizeof(Path));
-    (*p)->addr = addr;
-    (*p)->next = NULL;
-
-    packet->size++;
-}
-
-void deletePacket(Packet* packet){
-    Path* next = packet->path;
-    while(next != NULL){
-        free(packet->path);
-        packet->path = next;
-        next = next->next;
-    }
-}*/
 
 typedef struct PLE{
     Packet* packet;
     struct PLE* next;
 }PacketListElement;
 
-PacketListElement* packetList = NULL;
-uint8_t packetIdCnt = 0;
+static PacketListElement* packetList = NULL;
+
+static uint8_t lastPacketIdSend = 0;
+static uint8_t lastPacketIdAck = 0;
 
 static void addToPacketList(PacketListElement** list, Packet* packet){
     while(*list != NULL)
@@ -126,11 +112,11 @@ static uint8_t isPacketInList(PacketListElement** list, Packet* packet){
 static void sendAlert(struct broadcast_conn* broadcast){
         /* Copy data to the packet buffer */
         Packet packet;
-        packet.type = 0;
+        packet.type = ALERT;
         linkaddr_copy(&(packet.sender), &linkaddr_node_addr);
-        packet.packetID = packetIdCnt++;
+        packet.packetID = ++lastPacketIdSend;
         packet.hops = 0;
-        packet.timestamp = clock_time();
+
         packetbuf_copyfrom((void*)&packet, sizeof(Packet));
         
         addToPacketList(&packetList, &packet);
@@ -138,41 +124,72 @@ static void sendAlert(struct broadcast_conn* broadcast){
         /* Send broadcast packet */
         broadcast_send(broadcast);
         
-        printf("%d, %d sent broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
+        if(isPrintMode(DEBUG))
+            printf("%d, %d sent broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
 }
 
-/*---------------------------------------------------------------------------*/
-/* 
- * Define callbacks function
- * Called when a packet has been received by the broadcast module
- */
-static void
-broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from) {
-    /* 
-     * Function: void* packetbuf_dataptr()
-     * Get a pointer to the data in the packetbuf
-     * Using appropriate casting operator for data
-     */
+static void sendAck(struct broadcast_conn* broadcast, linkaddr_t* sender){
+        /* Copy data to the packet buffer */
+        Packet packet;
+        packet.type = ACK;
+        linkaddr_copy(&(packet.sender), sender);
+        packet.packetID = ++lastPacketIdSend;
+        packet.hops = 0;
+
+        packetbuf_copyfrom((void*)&packet, sizeof(Packet));
+        
+        addToPacketList(&packetList, &packet);
+
+        /* Send broadcast packet */
+        broadcast_send(broadcast);
+        
+        if(isPrintMode(DEBUG))
+            printf("%d, %d sent ack broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
+}
+
+
+static void broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from) {
+
+
     Packet* packet = (Packet*) packetbuf_dataptr();
     packet->hops++;
 
-    if(packet->type == 0){
+    if(packet->type == ALERT){
 
-        //printf("time: %d ms", (int)(clock_time() - packet->timestamp) * 1000/ CLOCK_SECOND );
+        if(isPrintMode(DEBUG))
+            printf("broadcast message received from %d.%d: packed type %d, hops %d\n", from->u8[0], from->u8[1], packet->type, packet->hops);
 
-        printf("broadcast message received from %d.%d: packed type %d, hops %d\n", 
-            from->u8[0], from->u8[1], packet->type, packet->hops);
+        if(linkaddr_node_addr.u8[0] == REPORTING_POINT_ADDR0 && linkaddr_node_addr.u8[1] == REPORTING_POINT_ADDR1){
+            
+            if(isPrintMode(LATENCY))
+                printf("sink received packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
 
-        if(linkaddr_node_addr.u8[0] == 1 && linkaddr_node_addr.u8[1] == 0){
-            printf("sink received packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
+            if(isPrintMode(HOPS))
+                printf("number of hops: %d", packet->hops);
+
+            // reporting point received packet: send acknowledgement back to sender
+            //sendAck(c, &packet->sender);
+
             return;
         }
 
+    } else if (packet->type == ACK) {
+        if(isPrintMode(LATENCY))
+            printf("source received ack packet from %d, %d\n", packet->sender.u8[0], packet->sender.u8[1]);
+
+        return;
     }
 
     /* transmit packet only if it has not already been sent */
     if(isPacketInList(&packetList, packet))
         return;
+
+
+    // wait random time to avoid collision
+    /*static struct etimer et;
+    unsigned long ticks = CLOCK_SECOND / 1000 + random_rand() % (CLOCK_SECOND / 500);
+    etimer_set(&et, ticks);
+    PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));*/
 
     packetbuf_copyfrom((void*)packet, sizeof(Packet));
         
@@ -181,35 +198,9 @@ broadcast_recv(struct broadcast_conn *c, const linkaddr_t *from) {
     /* Send broadcast packet */
     broadcast_send(c);
     
-    printf("%d, %d sent broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
+    if(isPrintMode(DEBUG))
+        printf("%d, %d sent broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
 }
-
-/*static void initTime(struct broadcast_conn* broadcast){
-
-    timesynch_init();
-
-    if(linkaddr_node_addr.u8[0] == 1 && linkaddr_node_addr.u8[1] == 0)
-        timesynch_set_authority_level(2);
-    else
-        timesynch_set_authority_level(1);
-
-    //Copy data to the packet buffer
-    Packet packet;
-    packet.type = 1;
-    linkaddr_copy(&(packet.sender), &linkaddr_node_addr);
-    packet.packetID = packetIdCnt++;
-    packet.hops = 0;
-    packet.timestamp = clock_time();
-    packetbuf_copyfrom((void*)&packet, sizeof(Packet));
-    
-    addToPacketList(&packetList, &packet);
-
-    // Send broadcast packet
-    broadcast_send(broadcast);
-    
-    printf("%d, %d sent broadcast packet\n", linkaddr_node_addr.u8[0], linkaddr_node_addr.u8[1]);
-
-}*/
 
 static const struct broadcast_callbacks broadcast_cb = {broadcast_recv};
 
@@ -218,7 +209,7 @@ static const struct broadcast_callbacks broadcast_cb = {broadcast_recv};
 static struct broadcast_conn broadcast;
 
 PROCESS_THREAD(example_broadcast_process, ev, data) {
-    /*static struct etimer et;*/
+    static struct etimer et;
     
     PROCESS_EXITHANDLER(broadcast_close(&broadcast);)
     PROCESS_BEGIN();
@@ -235,17 +226,26 @@ PROCESS_THREAD(example_broadcast_process, ev, data) {
     
     /* Send broadcast packet in loop */
     while(1) {
-        /* Delay 2-4 seconds*/
-        /*unsigned long ticks = CLOCK_SECOND * 2 + random_rand() % (CLOCK_SECOND * 2);
-        
-        etimer_set(&et, ticks);
-        PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));*/
+
 
         PROCESS_YIELD_UNTIL(ev == sensors_event && data == &button_sensor);
-        printf("================\n");
-        printf(" button clicked \n");
-        printf("================\n");
+
+        if(isPrintMode(LATENCY)) {
+            printf("================\n");
+            printf(" button clicked \n");
+            printf("================\n");
+        }
+
         sendAlert(&broadcast);
+
+        unsigned long ticks = CLOCK_SECOND * 2;
+        etimer_set(&et, ticks);
+        PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
+
+        // if packet has not been acknowledged after 2 seconds: retransmit packet
+        if(lastPacketIdSend != lastPacketIdAck){
+            sendAlert(&broadcast);
+        }
 
     }
     
@@ -269,12 +269,15 @@ PROCESS_THREAD(energest_thread, ev, data){
     while(1){
         etimer_set(&periodicTimer, CLOCK_SECOND * 1);
         PROCESS_YIELD_UNTIL(etimer_expired(&periodicTimer));
-        //etimer_reset(&periodicTimer);
+
         energest_flush();
-        printf("cpu: %4lu", energest_type_time(ENERGEST_TYPE_CPU));
-        printf("lpm: %4lu", energest_type_time(ENERGEST_TYPE_LPM));
-        printf("transmit: %4lu", energest_type_time(ENERGEST_TYPE_TRANSMIT));
-        printf("listen: %4lu\n", energest_type_time(ENERGEST_TYPE_LISTEN));
+
+        if(isPrintMode(ENERGY)) {
+            printf("cpu: %4lu ", energest_type_time(ENERGEST_TYPE_CPU));
+            printf("lpm: %4lu ", energest_type_time(ENERGEST_TYPE_LPM));
+            printf("transmit: %4lu ", energest_type_time(ENERGEST_TYPE_TRANSMIT));
+            printf("listen: %4lu\n", energest_type_time(ENERGEST_TYPE_LISTEN));
+        }
     }
 
     PROCESS_END();
